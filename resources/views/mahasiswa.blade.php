@@ -18,17 +18,19 @@
               </tr>
             </thead>
             <tbody>
+              @foreach($mahasiswa as $mhs)
               <tr>
-                <th scope="row">1</th>
-                <td>Muhammad Nayaka Putra</td>
-                <td>221402001</td>
-                <td>Teknologi Informasi</td>
-                <td>Ilmu Komputer dan Teknologi Informasi</td>
+                <th scope="row">{{$mhs->id_mahasiswa}}</th>
+                <td>{{$mhs->nama}}</td>
+                <td>{{$mhs->nim}}</td>
+                <td>{{$mhs->alamat}}</td>
+                <td>{{$mhs->ktm->nomor_identitas}}</td>
                 <td>
                     <button type="button" class="btn btn-primary">Update</button>
                     <button type="button" class="btn btn-danger">Hapus</button>
                 </td>
               </tr>
+              @endforeach 
             </tbody>
           </table>
     </div>
