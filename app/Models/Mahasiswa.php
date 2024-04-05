@@ -13,6 +13,6 @@ class Mahasiswa extends Model
 
     protected $primaryKey = 'id_mahasiswa';
     public function ktm(){
-        return $this->hasOne(ktm::class);
+        return $this->hasOne(KTM::class, 'id_mahasiswa');
     }
 }

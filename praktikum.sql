@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2024 at 02:58 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Apr 05, 2024 at 06:59 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dosen`
+--
+
+CREATE TABLE `dosen` (
+  `id_dosen` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `nip` int(18) NOT NULL,
+  `alamat` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `dosen`
+--
+
+INSERT INTO `dosen` (`id_dosen`, `nama`, `nip`, `alamat`) VALUES
+(1, 'John Doe', 2147483647, 'Jalan apel 123'),
+(2, 'Jane Doe', 2147483647, 'Jalan jambu 123'),
+(3, 'Adam Smith', 2147483647, 'Jalan nenas 123'),
+(4, 'Sarah Lee', 2147483647, 'Jalan sirsak 123'),
+(5, 'Michael Wong', 2147483647, 'Jalan mangga 123'),
+(6, 'Lisa Chen', 2147483647, 'Jalan pisang 123'),
+(7, 'David Park', 2147483647, 'Jalan nangka 123'),
+(8, 'Emily Wu', 2147483647, 'Jalan duku 123'),
+(9, 'Jay Park', 2147483647, 'Jalan durian 123');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ktm`
 --
 
@@ -31,7 +59,7 @@ CREATE TABLE `ktm` (
   `id_ktm` int(11) NOT NULL,
   `id_mahasiswa` int(11) NOT NULL,
   `nomor_identitas` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ktm`
@@ -59,7 +87,7 @@ CREATE TABLE `mahasiswa` (
   `nim` int(9) NOT NULL,
   `jurusan` varchar(50) NOT NULL,
   `alamat` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mahasiswa`
@@ -75,9 +103,42 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `nim`, `jurusan`, `alamat`) VAL
 (7, 'David Park', 1901007, 'Ekonomi', 'Jalan Pahlawan 56 '),
 (8, 'Emily Wu', 1901008, 'Psikologi', 'Jalan Harmoni 88');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nidn`
+--
+
+CREATE TABLE `nidn` (
+  `id_nidn` int(11) NOT NULL,
+  `id_dosen` int(11) NOT NULL,
+  `nomor_identitas` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nidn`
+--
+
+INSERT INTO `nidn` (`id_nidn`, `id_dosen`, `nomor_identitas`) VALUES
+(1, 1, '0012367890'),
+(2, 2, '0012637485'),
+(3, 3, '0037284734'),
+(4, 4, '0028274645'),
+(5, 5, '0073849565'),
+(6, 6, '0027384985'),
+(7, 7, '0028282357'),
+(8, 8, '0037586589'),
+(9, 9, '0035636863');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `dosen`
+--
+ALTER TABLE `dosen`
+  ADD PRIMARY KEY (`id_dosen`);
 
 --
 -- Indexes for table `ktm`
@@ -91,6 +152,12 @@ ALTER TABLE `ktm`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mahasiswa`);
+
+--
+-- Indexes for table `nidn`
+--
+ALTER TABLE `nidn`
+  ADD PRIMARY KEY (`id_nidn`);
 
 --
 -- AUTO_INCREMENT for dumped tables
