@@ -11,7 +11,7 @@ class KTM extends Model
     protected $table = 'ktm';
 
     protected $primaryKey = 'id_ktm';
-
+    public $timestamps = false;
     public function mahasiswa(){
         return $this->belongsTo(Mahasiswa::class);
     }    

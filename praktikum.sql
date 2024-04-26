@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Apr 05, 2024 at 06:59 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -103,33 +94,6 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `nim`, `jurusan`, `alamat`) VAL
 (7, 'David Park', 1901007, 'Ekonomi', 'Jalan Pahlawan 56 '),
 (8, 'Emily Wu', 1901008, 'Psikologi', 'Jalan Harmoni 88');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `nidn`
---
-
-CREATE TABLE `nidn` (
-  `id_nidn` int(11) NOT NULL,
-  `id_dosen` int(11) NOT NULL,
-  `nomor_identitas` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `nidn`
---
-
-INSERT INTO `nidn` (`id_nidn`, `id_dosen`, `nomor_identitas`) VALUES
-(1, 1, '0012367890'),
-(2, 2, '0012637485'),
-(3, 3, '0037284734'),
-(4, 4, '0028274645'),
-(5, 5, '0073849565'),
-(6, 6, '0027384985'),
-(7, 7, '0028282357'),
-(8, 8, '0037586589'),
-(9, 9, '0035636863');
-
 --
 -- Indexes for dumped tables
 --
@@ -152,12 +116,6 @@ ALTER TABLE `ktm`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mahasiswa`);
-
---
--- Indexes for table `nidn`
---
-ALTER TABLE `nidn`
-  ADD PRIMARY KEY (`id_nidn`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -189,3 +147,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

@@ -5,15 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NIDN extends Model
+class Staff extends Model
 {
     use HasFactory;
-    protected $table = 'nidn';
-
-    protected $primaryKey = 'id_nidn';
-
+    protected $table = 'staff';
+    protected $primaryKey = 'id';
+    protected $fillable = ['id', 'nip', 'email', 'nama', 'tanggal_lahir', 'no_hp'];
     public $timestamps = false;
-    public function dosen(){
-        return $this->belongsTo(Dosen::class);
-    } 
 }
