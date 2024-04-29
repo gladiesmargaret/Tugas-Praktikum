@@ -20,9 +20,11 @@ class NidnFactory extends Factory
     protected $model = Nidn::class;
     public function definition(): array
     {
+        // $dosen_id_nidn =Dosen::all()->pluck('id_nidn')->toArray();
+
         return [
-            'id_nidn' => $this->faker->unique()->numberBetween(1, 10),
-            'nomor_identitas' => $this->faker->unique()->numerify('KTD#####')
+            'id_dosen' => $this->faker->unique()->numberBetween(1, 12),
+            'nomor_identitas' => $this->faker->unique()->numerify('############')
         ];
     }
 }

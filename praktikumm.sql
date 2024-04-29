@@ -1,3 +1,12 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 29, 2024 at 11:48 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -9,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `praktikum`
+-- Database: `praktikumm`
 --
 
 -- --------------------------------------------------------
@@ -94,6 +103,33 @@ INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `nim`, `jurusan`, `alamat`) VAL
 (7, 'David Park', 1901007, 'Ekonomi', 'Jalan Pahlawan 56 '),
 (8, 'Emily Wu', 1901008, 'Psikologi', 'Jalan Harmoni 88');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nidn`
+--
+
+CREATE TABLE `nidn` (
+  `id_nidn` int(11) NOT NULL,
+  `id_dosen` int(11) NOT NULL,
+  `nomor_identitas` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nidn`
+--
+
+INSERT INTO `nidn` (`id_nidn`, `id_dosen`, `nomor_identitas`) VALUES
+(1, 1, '001234567856'),
+(2, 2, '003456765435'),
+(3, 3, '003746575747'),
+(4, 4, '004757575837'),
+(5, 5, '003757628437'),
+(6, 6, '008284638236'),
+(7, 7, '001375436543'),
+(8, 8, '008347736326'),
+(9, 9, '002136274537');
+
 --
 -- Indexes for dumped tables
 --
@@ -116,6 +152,12 @@ ALTER TABLE `ktm`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mahasiswa`);
+
+--
+-- Indexes for table `nidn`
+--
+ALTER TABLE `nidn`
+  ADD PRIMARY KEY (`id_nidn`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -147,4 +189,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
